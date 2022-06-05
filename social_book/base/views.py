@@ -11,6 +11,7 @@ from .models import Profile, Post, LikePost, FollowersCount
 
 @login_required(login_url='sign-in')
 def index(request):
+
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
 
